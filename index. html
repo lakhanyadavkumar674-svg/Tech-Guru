@@ -1,0 +1,1048 @@
+=0  <!DOCTYPE html>
+=0  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tech Dot Shivam | Gaming</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#020712;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================
+   ANIMATED 3D BACKGROUND
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 20% 20%,#07386b55,transparent 30%),
+        radial-gradient(circle at 80% 70%,#004cff44,transparent 30%),
+        #020712;
+}
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(2px);
+    opacity:.45;
+    animation:float 8s infinite ease-in-out;
+}
+
+.orb1{
+    width:250px;
+    height:250px;
+    background:#008cff;
+    top:10%;
+    left:5%;
+    box-shadow:0 0 100px #008cff;
+}
+
+.orb2{
+    width:180px;
+    height:180px;
+    background:#0066ff;
+    right:10%;
+    top:20%;
+    animation-delay:2s;
+    box-shadow:0 0 100px #0066ff;
+}
+
+.orb3{
+    width:300px;
+    height:300px;
+    background:#00b7ff;
+    bottom:-100px;
+    left:40%;
+    animation-delay:4s;
+    box-shadow:0 0 120px #00b7ff;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translate3d(0,0,0) scale(1);
+    }
+    50%{
+        transform:translate3d(80px,-60px,100px) scale(1.15);
+    }
+}
+
+/* 3D GRID */
+
+.grid{
+    position:absolute;
+    width:200%;
+    height:70%;
+    left:-50%;
+    bottom:-25%;
+    background:
+        linear-gradient(#008cff33 1px,transparent 1px),
+        linear-gradient(90deg,#008cff33 1px,transparent 1px);
+    background-size:50px 50px;
+    transform:perspective(500px) rotateX(65deg);
+    animation:gridMove 5s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:0 50px;
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:#020916dd;
+    border-bottom:1px solid #0c4775;
+    backdrop-filter:blur(15px);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    background:linear-gradient(135deg,#00b7ff,#0055ff);
+    box-shadow:0 0 25px #008cff;
+}
+
+.logo span{
+    color:#00aaff;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00aaff;
+    text-shadow:0 0 15px #00aaff;
+}
+
+.login{
+    padding:11px 23px;
+    background:linear-gradient(90deg,#009cff,#005cff);
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:530px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 7%;
+    position:relative;
+}
+
+.hero-text{
+    width:52%;
+}
+
+.small-title{
+    color:#00aaff;
+    font-size:20px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:75px;
+    line-height:.95;
+}
+
+.hero h1 span{
+    color:#00aaff;
+    text-shadow:
+        0 0 10px #00aaff,
+        0 0 40px #006cff;
+}
+
+.hero p{
+    color:#c9e5ff;
+    font-size:20px;
+    margin:25px 0;
+}
+
+.play-btn{
+    display:inline-block;
+    padding:16px 35px;
+    background:linear-gradient(90deg,#009cff,#0055ff);
+    color:white;
+    text-decoration:none;
+    border-radius:35px;
+    font-size:19px;
+    font-weight:bold;
+    box-shadow:0 0 30px #008cff88;
+    transition:.3s;
+}
+
+.play-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 50px #008cff;
+}
+
+/* 3D CHARACTER */
+
+.gamer{
+    width:43%;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.gamer-ring{
+    width:320px;
+    height:320px;
+    border:2px solid #008cff55;
+    border-radius:50%;
+    box-shadow:
+        0 0 30px #008cff,
+        inset 0 0 50px #008cff55;
+    animation:rotate 8s linear infinite;
+}
+
+.gamer-icon{
+    position:absolute;
+    font-size:180px;
+    filter:drop-shadow(0 0 30px #008cff);
+    animation:characterFloat 3s ease-in-out infinite;
+}
+
+@keyframes rotate{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes characterFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* =========================
+   GAMES
+========================= */
+
+.games-section{
+    padding:50px 5%;
+}
+
+.title{
+    font-size:35px;
+    margin-bottom:30px;
+}
+
+.title span{
+    color:#00aaff;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(145deg,#071d35ee,#020b17ee);
+    border:1px solid #15517c;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.4s;
+    transform-style:preserve-3d;
+}
+
+.card:hover{
+    transform:
+        perspective(700px)
+        rotateX(5deg)
+        rotateY(-5deg)
+        translateY(-12px);
+    border-color:#00aaff;
+    box-shadow:0 20px 50px #008cff55;
+}
+
+.game-img{
+    height:160px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:75px;
+}
+
+.freefire{
+    background:linear-gradient(135deg,#5b1700,#ff5c00);
+}
+
+.bgmi{
+    background:linear-gradient(135deg,#173b58,#718a9b);
+}
+
+.gta{
+    background:linear-gradient(135deg,#421d12,#ed7541);
+}
+
+.minecraft{
+    background:linear-gradient(135deg,#0d511c,#56a938);
+}
+
+.asphalt{
+    background:linear-gradient(135deg,#151a28,#c51626);
+}
+
+.card-content{
+    padding:17px;
+    text-align:center;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:13px;
+}
+
+.download-btn{
+    width:100%;
+    border:none;
+    padding:11px;
+    border-radius:25px;
+    background:#008cff;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.download-btn:hover{
+    background:#00b7ff;
+    box-shadow:0 0 25px #008cff;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    margin:30px 5%;
+    padding:30px;
+    border:1px solid #145078;
+    border-radius:18px;
+    background:#031426dd;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature{
+    text-align:center;
+    border-right:1px solid #145078;
+}
+
+.feature:last-child{
+    border:none;
+}
+
+.feature-icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#8ba9c3;
+    margin-top:5px;
+}
+
+/* =========================
+   DOWNLOAD MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#000000bb;
+    backdrop-filter:blur(10px);
+    z-index:200;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-box{
+    width:90%;
+    max-width:450px;
+    background:
+        linear-gradient(145deg,#092440,#020b17);
+    border:1px solid #008cff;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    box-shadow:
+        0 0 40px #008cff77,
+        inset 0 0 30px #008cff22;
+    animation:popup .3s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.modal-box h2{
+    color:#00aaff;
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#bdd8ed;
+    margin-bottom:20px;
+}
+
+.progress{
+    height:10px;
+    background:#0b2035;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#00aaff;
+    box-shadow:0 0 15px #00aaff;
+    transition:width .2s;
+}
+
+.real-download{
+    display:none;
+    background:#00aaff;
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.close{
+    margin-top:18px;
+    background:transparent;
+    border:1px solid #456;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:35px;
+    margin-top:50px;
+    background:#010711;
+    border-top:1px solid #123b5d;
+}
+
+footer h2{
+    color:#00aaff;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#8faac2;
+    margin:6px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .gamer{
+        width:100%;
+        margin-top:30px;
+    }
+
+    .games{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature{
+        border:none;
+    }
+}
+
+@media(max-width:550px){
+
+    header{
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+    }
+
+    .login{
+        padding:9px 15px;
+    }
+
+    .hero{
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .gamer{
+        height:280px;
+    }
+
+    .gamer-ring{
+        width:240px;
+        height:240px;
+    }
+
+    .gamer-icon{
+        font-size:130px;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- ANIMATED BACKGROUND -->
+<div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="grid"></div>
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        <div class="logo-icon">🎮</div>
+        Tech Dot <span>Shivam</span>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#games">Games</a>
+        <a href="#">🏆 Leaderboard</a>
+        <a href="#">⬇ Downloads</a>
+        <a href="#">About</a>
+    </nav>
+
+    <a href="#" class="login">Login</a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            PLAY • ENJOY • BECOME PRO
+        </div>
+
+        <h1>
+            Tech Dot<br>
+            <span>Shivam</span>
+        </h1>
+
+        <p>
+            Your ultimate destination for gaming,
+            entertainment and epic battles.
+        </p>
+
+        <a href="#games" class="play-btn">
+            🎮 Play Now
+        </a>
+
+    </div>
+
+
+    <div class="gamer">
+
+        <div class="gamer-ring"></div>
+
+        <div class="gamer-icon">
+            🧑‍🚀
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section class="games-section" id="games">
+
+    <h2 class="title">
+        🎮 Our <span>Games</span>
+    </h2>
+
+
+    <div class="games">
+
+
+        <!-- FREE FIRE -->
+
+        <div class="card">
+
+            <div class="game-img freefire">
+                🔥
+            </div>
+
+            <div class="card-content">
+
+                <h3>Free Fire</h3>
+
+                <button
+                    class="download-btn"
+                    onclick="openDownload('Free Fire')">
+
+                    ⬇ Download
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BGMI -->
+
+        <div class="card">
+
+            <div class="game-img bgmi">
+                🎯
+            </div>
+
+            <div class="card-content">
+
+                <h3>BGMI</h3>
+
+                <button
+                    class="download-btn"
+                    onclick="openDownload('BGMI')">
+
+                    ⬇ Download
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- GTA -->
+
+        <div class="card">
+
+            <div class="game-img gta">
+                🚗
+            </div>
+
+            <div class="card-content">
+
+                <h3>GTA 5</h3>
+
+                <button
+                    class="download-btn"
+                    onclick="openDownload('GTA 5')">
+
+                    ⬇ Download
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MINECRAFT -->
+
+        <div class="card">
+
+            <div class="game-img minecraft">
+                ⛏️
+            </div>
+
+            <div class="card-content">
+
+                <h3>Minecraft</h3>
+
+                <button
+                    class="download-btn"
+                    onclick="openDownload('Minecraft')">
+
+                    ⬇ Download
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ASPHALT -->
+
+        <div class="card">
+
+            <div class="game-img asphalt">
+                🏎️
+            </div>
+
+            <div class="card-content">
+
+                <h3>Asphalt 9</h3>
+
+                <button
+                    class="download-btn"
+                    onclick="openDownload('Asphalt 9')">
+
+                    ⬇ Download
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">⚡</div>
+
+        <h3>Fast Downloads</h3>
+
+        <p>Super fast gaming experience</p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🛡️</div>
+
+        <h3>Secure</h3>
+
+        <p>Your data stays protected</p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🎮</div>
+
+        <h3>All Games</h3>
+
+        <p>New and popular games</p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🎧</div>
+
+        <h3>24/7 Support</h3>
+
+        <p>Always here to help</p>
+
+    </div>
+
+</section>
+
+
+<!-- DOWNLOAD POPUP -->
+
+<div class="modal" id="downloadModal">
+
+    <div class="modal-box">
+
+        <h2 id="gameName">
+            Download Game
+        </h2>
+
+        <p id="downloadText">
+            Preparing your download...
+        </p>
+
+        <div class="progress">
+
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+
+        </div>
+
+        <a
+            id="realDownload"
+            class="real-download"
+            href="#"
+            download>
+
+            ⬇ Download Now
+
+        </a>
+
+        <br>
+
+        <button
+            class="close"
+            onclick="closeDownload()">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>🎮 Tech Dot Shivam</h2>
+
+    <p>
+        Play • Learn • Grow ❤️
+    </p>
+
+    <p>
+        © 2026 Tech Dot Shivam. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   DOWNLOAD SYSTEM
+========================= */
+
+function openDownload(game){
+
+    const modal =
+        document.getElementById("downloadModal");
+
+    const name =
+        document.getElementById("gameName");
+
+    const text =
+        document.getElementById("downloadText");
+
+    const bar =
+        document.getElementById("progressBar");
+
+    const download =
+        document.getElementById("realDownload");
+
+
+    modal.style.display="flex";
+
+    name.innerText =
+        "Download " + game;
+
+    text.innerText =
+        "Preparing " + game + "...";
+
+    bar.style.width="0%";
+
+    download.style.display="none";
+
+
+    let progress=0;
+
+
+    const timer=setInterval(function(){
+
+        progress += 10;
+
+        bar.style.width =
+            progress + "%";
+
+        text.innerText =
+            "Preparing download... "
+            + progress + "%";
+
+
+        if(progress>=100){
+
+            clearInterval(timer);
+
+            text.innerText =
+                game + " is ready to download!";
+
+            download.style.display =
+                "inline-block";
+
+            /*
+              IMPORTANT:
+              यहाँ अपनी असली गेम फाइल का URL लगाएँ।
+
+              Example:
+              download.href =
+              "games/my-game.apk";
+
+              या:
+
+              download.href =
+              "downloads/game.zip";
+            */
+
+            download.href =
+                "downloads/" +
+                game.toLowerCase()
+                .replaceAll(" ","-") +
+                ".zip";
+
+        }
+
+    },200);
+
+}
+
+
+function closeDownload(){
+
+    document.getElementById(
+        "downloadModal"
+    ).style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
